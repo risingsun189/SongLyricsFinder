@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class SongLyricsDB extends SQLiteOpenHelper {
 
     /**
-     * Table name
+     *name of the Table
      */
     String favouritesTable = "FavouriteSongs";
     /**
@@ -19,15 +19,15 @@ public class SongLyricsDB extends SQLiteOpenHelper {
      */
     String recordId = "RecordId";
     /**
-     * Column name for song title
+     * Column for song name
      */
     String songName = "songName";
     /**
-     * Column name for artist or band name
+     * Column for artist
      */
     String artistName = "artistName";
     /**
-     * Column name for song lyrics
+     * Column for song lyrics
      */
     String lyrics = "SongLyrics";
 
@@ -39,7 +39,8 @@ public class SongLyricsDB extends SQLiteOpenHelper {
     }
 
     /**
-     * Creates the database on the first run
+     * Creating the database when user runs
+     * app for the first time
      * */
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -51,7 +52,8 @@ public class SongLyricsDB extends SQLiteOpenHelper {
     }
 
     /**
-     * drops and creates new database on update
+     * drops previous database and
+     * creates new database on update
      * */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

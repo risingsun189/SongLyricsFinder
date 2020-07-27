@@ -48,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         contentFrame=findViewById(R.id.content_frame);
+        /**
+         * calling method for setting up toolbar on create
+         */
         setupToolbar();
 
         //setting up drawer
         DataModel[] drawerItem = new DataModel[2];
-
+        //passing selection value
         drawerItem[0] = new DataModel( getResources().getString(R.string.home));
         drawerItem[1] = new DataModel(getResources().getString(R.string.fav));
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         setupDrawerToggle();
+
+        /**
+         * loading default fragment on start
+         */
         loadFragment(new FragmentMain());
 
     }
@@ -90,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param position
+     */
     private void selectItem(int position) {
 
         Fragment fragment = null;
@@ -102,10 +113,11 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new FragmentFavorites();
                 break;
             default:
-
                 break;
         }
-
+        /**
+         * setting up content frame on item selection
+         */
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
@@ -156,12 +168,18 @@ public class MainActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
     }
 
+    /**
+     * setting up toolbar
+     */
     void setupToolbar(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * changing state of drawer icon on toggle
+     */
     void setupDrawerToggle(){
         mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         //This is necessary to change the icon of the Drawer Toggle upon state change.

@@ -50,16 +50,25 @@ public class FragmentMain extends Fragment {
      */
     SharedPreferences sharedPreferences;
 
+    /**
+     * public constructor
+     */
     public FragmentMain() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        /**
+         * setting up layout
+         */
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         findLyricsBtn = rootView.findViewById(R.id.findLyricsBtn);
-        sharedPreferences = getActivity().getSharedPreferences(Constants.SEARCH_DATA, Context.MODE_PRIVATE);
         artistName = rootView.findViewById(R.id.artistNameEdt);
         songName = rootView.findViewById(R.id.songNameEdt);
+        /**
+         * setting up sharedPreference
+         */
+        sharedPreferences = getActivity().getSharedPreferences(Constants.SEARCH_DATA, Context.MODE_PRIVATE);
 
         //fetch last searched data if any
         getLastSearch();
@@ -70,6 +79,7 @@ public class FragmentMain extends Fragment {
                 String artist = artistName.getText().toString();
                 String song = songName.getText().toString();
 
+                //checking if user have entered values or not
                 if (artist.trim().isEmpty()) {
                     Toast.makeText(getActivity(), getResources().getString(R.string.enter_artist_name), Toast.LENGTH_SHORT).show();
                 } else if (song.trim().isEmpty()) {
@@ -152,6 +162,11 @@ public class FragmentMain extends Fragment {
             progressDialog.show();
         }
 
+        /**
+         * fetching response from api on background thread
+         * @param voids
+         * @return
+         */
         @Override
         protected String doInBackground(Void... voids) {
             String httpResponse = "";

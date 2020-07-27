@@ -30,20 +30,38 @@ public class FragmentFavorites extends Fragment {
      * Object reference for database
      */
     SongLyricsDB songLyricsDB;
+
+    /**
+     * public constructor
+     */
     public FragmentFavorites() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        /**
+         * setting up layout
+         */
         View rootView = inflater.inflate(R.layout.fragment_favorites, container, false);
+        /**
+         * initializing database
+         */
         songLyricsDB = new SongLyricsDB(getActivity());
+
+
         listView = rootView.findViewById(R.id.listView);
 
+        /**
+         * setting up onItemClickListener to move user to SongLyrics activity
+         * along with song data
+         */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /** show detail for the selected list item in another activity*/
+                /**
+                 * passing data on the user click
+                 */
                 DetailOfSong detailOfSong = (DetailOfSong) parent.getItemAtPosition(position);
                 Intent intent = new Intent(getActivity(), SongLyrics.class);
                 intent.putExtra(Constants.INTENT_ARTIST, detailOfSong.getArtist());
@@ -54,6 +72,10 @@ public class FragmentFavorites extends Fragment {
         });
         return rootView;
     }
+
+    /**
+     * reading data when application comes back from onPause state
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -61,8 +83,8 @@ public class FragmentFavorites extends Fragment {
     }
 
     /**
-     * Gets all the favourite song details from the database
-     * and sets the retrieved data to ListView using adapter.
+     * getting list of favorite songs and setting it
+     * to listview via adapter
      */
     private void readDatabaseData() {
         ArrayList<DetailOfSong> detailOfSongs = songLyricsDB.getAllFavourites();

@@ -53,19 +53,36 @@ public class SongLyrics extends AppCompatActivity {
         removeFav = findViewById(R.id.remFavBtn);
         sl1 =findViewById(R.id.sl1);
 
+        /**
+         * initializing database
+         */
         songLyricsDB = new SongLyricsDB(this);
 
+        /**
+         * getting values from intent object
+         */
         Intent intent = getIntent();
         artist = intent.getStringExtra(Constants.INTENT_ARTIST);
         song = intent.getStringExtra(Constants.INTENT_SONG);
         lyrics = intent.getStringExtra(Constants.INTENT_LYRICS);
 
+        /**
+         * setting values to TextViews
+         */
         artistName.setText(artist);
         songName.setText(song);
         songLyrics.setText(lyrics);
 
-
+        /**
+         * @param artist
+         * @param song
+         * checking if song exist in the database as favorite
+         */
         recordId = songLyricsDB.isFavouriteExists(artist, song);
+
+        /**
+         * changing visibility of buttons based on boolean values
+         */
         boolean isFavouriteAdded = !recordId.equals("0");
         if (isFavouriteAdded) {
             addToFav.setVisibility(View.GONE);
@@ -74,7 +91,9 @@ public class SongLyrics extends AppCompatActivity {
             removeFav.setVisibility(View.GONE);
             addToFav.setVisibility(View.VISIBLE);
         }
-
+        /**
+         * logic for searching on google
+         */
         Searchgoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +103,10 @@ public class SongLyrics extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
+        /**
+         * adding song data into database
+         */
         addToFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +122,10 @@ public class SongLyrics extends AppCompatActivity {
                 Snackbar.make(sl1,getResources().getString(R.string.fav_added), Snackbar.LENGTH_SHORT).show();
             }
         });
+
+        /**
+         * removing song data from database
+         */
         removeFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +136,7 @@ public class SongLyrics extends AppCompatActivity {
                 .setPositiveButton(getResources().getString(R.string.alert_yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //deleting record from the db
+                        //deleting record from the db by using recordId as primary key
                         songLyricsDB.deleteFavourite(recordId);
                         removeFav.setVisibility(View.GONE);
                         addToFav.setVisibility(View.VISIBLE);

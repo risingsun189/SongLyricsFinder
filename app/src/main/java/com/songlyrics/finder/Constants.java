@@ -1,5 +1,8 @@
 package com.songlyrics.finder;
 
+/**
+ * class containing constants that are going to be used through out the app
+ */
 public class Constants {
     public static final String SEARCH_DATA ="LYRICS_SEARCH_DATA";
     public static final String NAME_Of_ARTIST="artistName";

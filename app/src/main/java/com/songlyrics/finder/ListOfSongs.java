@@ -20,6 +20,11 @@ public class ListOfSongs extends BaseAdapter {
      */
     static LayoutInflater inflater;
 
+    /**
+     *
+     * @param context
+     * @param detailOfSongs
+     */
     public ListOfSongs(Context context, ArrayList<DetailOfSong> detailOfSongs) {
         this.detailOfSongs = detailOfSongs;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +50,7 @@ public class ListOfSongs extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(R.layout.fav_item, parent, false);
         }
-        //bind the textViews and show the passed data into it.
+        //binding textViews and showing passed data
         DetailOfSong detailsOfSong = detailOfSongs.get(position);
         TextView songName = view.findViewById(R.id.songNameItem);
         TextView songArtist = view.findViewById(R.id.artistNameItem);
