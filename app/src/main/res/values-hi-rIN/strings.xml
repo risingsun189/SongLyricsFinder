@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">गीत के बोल खोजक</string>
+    <string name="navigation_drawer_open" translatable="false">नेविगेशन दराज खोलें</string>
+    <string name="navigation_drawer_close" translatable="false">नेविगेशन ड्रॉअर बंद करें</string>
+    <string name="nav_header_title" translatable="false">Android स्टूडियो</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">नेविगेशन हेडर</string>
+    <string name="action_settings" translatable="false">समायोजन</string>
+    <string name="enter_song_name" translatable="false">गीत का नाम दर्ज करें</string>
+    <string name="enter_artist_name" translatable="false">कलाकार का नाम दर्ज करें</string>
+    <string name="find_lyrics" translatable="false">गीत ढूढो</string>
+    <string name="song_name" translatable="false">गाने का नाम</string>
+    <string name="artist_name" translatable="false">कलाकार का नाम</string>
+    <string name="song_lyrics" translatable="false">गाने के बोल</string>
+    <string name="search_on_google" translatable="false">गूगल पर खोजें</string>
+    <string name="remove_from_favorites" translatable="false">पसंदीदा से निकालें</string>
+    <string name="add_to_favorites" translatable="false">पसंदीदा में जोड़े</string>
+    <string name="lyric_not_found" translatable="false">गीत के बोल नहीं मिले</string>
+    <string name="lyric_not_found_Json" translatable="false">गीत नहीं मिला JSON अपवाद</string>
+    <string name="searching_lyrics" translatable="false">गीत के बोल</string>
+    <string name="home" translatable="false">घर</string>
+    <string name="fav" translatable="false">पसंदीदा</string>
+    <string name="fragment_error" translatable="false">टुकड़ा बनाने में त्रुटि</string>
+    <string name="fav_added" translatable="false">हुर्रे, गीत पसंदीदा में जोड़ा गया!</string>
+    <string name="fav_removed" translatable="false">सफलता, पसंदीदा से हटाए गए गीत</string>
+    <string name="alert_title" translatable="false">ध्यान देने की जरुरत हैं</string>
+    <string name="alert_message" translatable="false">क्या आप पसंदीदा से हटाना चाहते हैं?</string>
+    <string name="alert_yes" translatable="false">हाँ</string>
+    <string name="alert_no" translatable="false">नहीं</string>
+    <string-array name="navigation_drawer_items_array" translatable="false">
+        <item>घर</item>
+        <item>पसंदीदा</item>
+    </string-array>
+</resources>

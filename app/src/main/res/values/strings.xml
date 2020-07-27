@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name" translatable="false">Song Lyrics Finder</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="enter_song_name" translatable="false">Enter Song Name</string>
+    <string name="enter_artist_name" translatable="false">Enter Artist Name</string>
+    <string name="find_lyrics" translatable="false">find lyrics</string>
+    <string name="song_name" translatable="false">Song Name</string>
+    <string name="artist_name" translatable="false">Artist Name</string>
+    <string name="song_lyrics" translatable="false">Song Lyrics</string>
+    <string name="search_on_google" translatable="false">Search on Google</string>
+    <string name="remove_from_favorites" translatable="false">Remove from Favorites</string>
+    <string name="add_to_favorites" translatable="false">Add to Favorites</string>
+    <string name="lyric_not_found_Json" translatable="false">Lyrics Not Found JSON Exception</string>
+    <string name="searching_lyrics" translatable="false">Searching Lyrics</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="fav" translatable="false">Favorites</string>
+    <string name="fragment_error" translatable="false">Error in creating fragment</string>
+    <string name="fav_added" translatable="false">Hurray, Song Added to Favorites!</string>
+    <string name="fav_removed" translatable="false">Success, Song Removed from Favorites</string>
+    <string name="alert_title" translatable="false">Attention Required</string>
+    <string name="alert_message" translatable="false">Do you want to Remove from Favorites?</string>
+    <string name="alert_yes" translatable="false">Yes</string>
+    <string name="alert_no" translatable="false">No</string>
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Home</item>
+        <item>Favorites</item>
+    </string-array>
+    <string name="lyric_not_found" translatable="false">Lyrics Not Found</string>
+
+</resources>

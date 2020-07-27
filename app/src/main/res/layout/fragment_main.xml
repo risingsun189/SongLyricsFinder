@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f9f9f9"
+        android:gravity="center_vertical|right"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <EditText
+            android:id="@+id/songNameEdt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="@string/enter_song_name"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/artistNameEdt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="@string/enter_artist_name"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/findLyricsBtn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/find_lyrics"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</LinearLayout>
