@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**
          * loading default fragment on start
+         * passing song lyrics search activity as default
          */
         loadFragment(new FragmentMain());
 
@@ -77,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * setting up default fragment
-     * @param fragment
+     * @param fragment this will set default activity as
+     *                 fragmentMain.class when open app
+     *
      */
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -99,7 +102,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * @param position
+     * @param position this variable will get value from
+     *                 DrawerItem click listener, which
+     *                 will be 0 or 1, that is Home or
+     *                 favorites
      */
     private void selectItem(int position) {
 
@@ -134,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * @param item
-     * @return
+     * @param item this will contain value of selected item
+     * @return and will return selected item
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -149,7 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * @param title
+     * @param title this will contain title of fragment
+     *              we will use it to set title of action bar
      */
     @Override
     public void setTitle(CharSequence title) {
@@ -159,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * @param savedInstanceState
+     * @param savedInstanceState saves current state value
      */
 
     @Override
