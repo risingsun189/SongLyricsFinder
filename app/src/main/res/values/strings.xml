@@ -26,7 +26,8 @@
     <string name="alert_message" translatable="false">Do you want to Remove from Favorites?</string>
     <string name="alert_yes" translatable="false">Yes</string>
     <string name="alert_no" translatable="false">No</string>
-
+    <string name="author_name" translatable="false">Author: Harshil Gabani</string>
+    <string name="version" translatable="false">version: 1 </string>
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
         <item>Favorites</item>
