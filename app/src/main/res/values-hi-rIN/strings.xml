@@ -32,4 +32,8 @@
         <item>घर</item>
         <item>पसंदीदा</item>
     </string-array>
+    <string name="author_name" translatable="false">लेखक: Harshil Gabani</string>
+    <string name="version" translatable="false">संस्करण: 1.0</string>
+    <string name="helpM" translatable="false">1. गीत का नाम और कलाकार का नाम दर्ज करें। \n2. गीत खोजें बटन दबाएं \n3. अब आप गीत के बोल देख सकते हैं। \n4. अपनी पसंदीदा सूची में गीत जोड़ने के लिए पसंदीदा बटन पर क्लिक करें \n5. अपने पसंदीदा गीत के बोल देखने के लिए ड्राअर खोलें और क्लिक करें पसंदीदा पर \n6. आप अपने द्वारा सहेजे गए गीतों की सूची देख सकते हैं। \n7. उन विशेष गीतों को खोलने के लिए उनमें से किसी पर क्लिक करें। \n8. आप अपने पसंदीदा से गीत हटाने के लिए, पसंदीदा बटन से हटाएं पर क्लिक कर सकते हैं।</string>
+    <string name="ok" translatable="false">ठीक है</string>
 </resources>

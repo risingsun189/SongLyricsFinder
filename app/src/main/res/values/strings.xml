@@ -27,7 +27,15 @@
     <string name="alert_yes" translatable="false">Yes</string>
     <string name="alert_no" translatable="false">No</string>
     <string name="author_name" translatable="false">Author: Harshil Gabani</string>
-    <string name="version" translatable="false">version: 1 </string>
+    <string name="version" translatable="false">"version: 1.0 "</string>
+    <string name="help" translatable="false">Help</string>
+    <string name="helpM" translatable="false">1. Enter Song Name and Artist Name\n2. Press the Find Lyrics Button\n3. You can now see song Lyrics\n4. Click on Add to Favorites Button to add song to your favorites list\n5. To view your Favorite song lyrics Open Drawer and click on Favorites\n6. You can see the list of songs you have saved\n7. Click on anyone of them to open that particular lyrics\n8. You can click on Remove from Favorites Button, to remove lyrics from your favorites</string>
+    <string name="ok" translatable="false">ok</string>
+    <string name="cancel" translatable="false">cancel</string>
+
+
+
+
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
         <item>Favorites</item>

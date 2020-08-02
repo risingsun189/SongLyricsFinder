@@ -1,15 +1,21 @@
 package com.songlyrics.finder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
      */
     Toolbar toolbar;
 
+    Menu menu;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     ActionBarDrawerToggle mDrawerToggle;
@@ -48,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         contentFrame=findViewById(R.id.content_frame);
+
         /**
          * calling method for setting up toolbar on create
          */
@@ -75,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new FragmentMain());
 
     }
+
+
+
+
 
     /**
      * setting up default fragment
@@ -131,11 +143,19 @@ public class MainActivity extends AppCompatActivity {
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(mNavigationDrawerItemTitles[position]);
-            mDrawerLayout.closeDrawer(mDrawerList);
+            mDrawerLayout.closeDrawer(GravityCompat.START);
 
         } else {
             Log.e("MainActivity", getResources().getString(R.string.fragment_error));
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.help_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+
     }
 
     /**
@@ -146,12 +166,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        if(item.getItemId() == R.id.help){
+            final AlertDialog.Builder help = new AlertDialog.Builder(this);
+            help.setTitle(getResources().getString(R.string.help));
+            help.setMessage(getResources().getString(R.string.helpM));
+            help.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+
+            });
+help.show();
+        }else
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+
 
     /**
      *
